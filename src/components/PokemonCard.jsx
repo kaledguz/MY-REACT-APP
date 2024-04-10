@@ -15,7 +15,6 @@ function PokemonCard({ pokemon }) {
   );
 }
 
-/* j'ai déclarer ici les propstypes car c'est la solution aux erreurs que l'extension lent m'affiche*/
 PokemonCard.propTypes = {
   pokemon: PropTypes.shape({
     imgSrc: PropTypes.string,
