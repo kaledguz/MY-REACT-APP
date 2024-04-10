@@ -1,17 +1,8 @@
-const pokemonList = [
-  {
-    name: "bulbasaur",
-    imgSrc:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-  },
-  {
-    name: "mew",
-  },
-];
+import PropTypes from "prop-types";
 
-function PokemonCard() {
-  const pokemon = pokemonList[1];
+export default PokemonCard;
 
+function PokemonCard({ pokemon }) {
   return (
     <figure>
       {pokemon.imgSrc ? (
@@ -24,4 +15,10 @@ function PokemonCard() {
   );
 }
 
-export default PokemonCard;
+/* j'ai déclarer ici les propstypes car c'est la solution aux erreurs que l'extension lent m'affiche*/
+PokemonCard.propTypes = {
+  pokemon: PropTypes.shape({
+    imgSrc: PropTypes.string,
+    name: PropTypes.string.isRequired,
+  }).isRequired,
+};
