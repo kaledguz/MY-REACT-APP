@@ -1,5 +1,7 @@
+// App.jsx
 import { useState } from "react";
 import MyTitle from "./components/MyTitle";
+import NavBar from "./components/NavBar";
 import PokemonCard from "./components/PokemonCard";
 
 const pokemonList = [
@@ -49,15 +51,12 @@ function App() {
     <div>
       <MyTitle />
       <PokemonCard pokemon={selectedPokemon} />
-      <button onClick={handlePreviousPokemon} disabled={pokemonIndex === 0}>
-        Précédent
-      </button>
-      <button
-        onClick={handleNextPokemon}
-        disabled={pokemonIndex === pokemonList.length - 1}
-      >
-        Suivant
-      </button>
+      <NavBar
+        handlePreviousPokemon={handlePreviousPokemon}
+        handleNextPokemon={handleNextPokemon}
+        pokemonIndex={pokemonIndex}
+        pokemonList={pokemonList}
+      />
     </div>
   );
 }
